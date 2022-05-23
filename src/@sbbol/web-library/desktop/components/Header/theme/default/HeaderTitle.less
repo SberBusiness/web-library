@@ -1,0 +1,62 @@
+@import '../../../../common/theme/default';
+
+.globalHeaderTitle {
+    padding: @ufs-theme-page-padding-y @ufs-theme-page-padding-x;
+
+    .headerTitleLinkWrapper {
+        .font-size(@font-size-14);
+    }
+
+    .headerTitleContent {
+        display: flex;
+        justify-content: space-between;
+
+        .globalHeaderTitleContentText {
+            .h1-header-main();
+
+            box-sizing: border-box;
+            text-transform: initial;
+        }
+
+        .globalHeaderTitleContentControls {
+            white-space: nowrap;
+            padding-left: @ufs-theme-padding-before-controls-column;
+        }
+
+        // На мобильных устройствах блок с кнопками располагается строкой ниже.
+        @media (max-width: @screen-md) {
+            flex-wrap: wrap;
+
+            .globalHeaderTitleContentText {
+                width: 100%;
+            }
+
+            .globalHeaderTitleContentControls {
+                padding-top: @page-elements-padding-y-sm;
+                padding-left: 0;
+                white-space: normal;
+            }
+        }
+    }
+
+    .headerTitleSubhead {
+        .font-size(@font-size-14);
+
+        color: @color-asphalt-01;
+
+        // На мобильных устройствах добавляется отступ от верхнего блока с кнопками.
+        @media (max-width: @screen-md) {
+            padding-top: @page-elements-padding-y-sm;
+        }
+    }
+}
+
+@media (max-width: @screen-md) {
+    .globalHeaderTitle {
+        padding: @page-padding-sm;
+
+        .headerTitleContent .globalHeaderTitleContentText {
+            .font-size(@font-size-16);
+        }
+    }
+}

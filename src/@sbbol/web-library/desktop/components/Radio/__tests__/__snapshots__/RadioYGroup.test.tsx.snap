@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioYGroup renders correctly 1`] = `
+<div
+  className="cssClass[radioYGroup]"
+  role="radiogroup"
+>
+  <label
+    className="cssClass[label] cssClass[nonempty]"
+    onMouseDown={[Function]}
+  >
+    <input
+      className="cssClass[radio]"
+      onFocus={[Function]}
+      type="radio"
+    />
+    <span
+      className="cssClass[radioIcon]"
+    />
+    <span
+      className="cssClass[content]"
+    >
+      Radio
+    </span>
+  </label>
+  <label
+    className="cssClass[label] cssClass[nonempty]"
+    onMouseDown={[Function]}
+  >
+    <input
+      className="cssClass[radio]"
+      onFocus={[Function]}
+      type="radio"
+    />
+    <span
+      className="cssClass[radioIcon]"
+    />
+    <span
+      className="cssClass[content]"
+    >
+      Radio
+    </span>
+  </label>
+  <label
+    className="cssClass[label] cssClass[nonempty]"
+    onMouseDown={[Function]}
+  >
+    <input
+      className="cssClass[radio]"
+      onFocus={[Function]}
+      type="radio"
+    />
+    <span
+      className="cssClass[radioIcon]"
+    />
+    <span
+      className="cssClass[content]"
+    >
+      Radio
+    </span>
+  </label>
+</div>
+`;

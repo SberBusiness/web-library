@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxXGroup renders correctly 1`] = `
+<div
+  className="cssClass[checkboxXGroup] cssClass[indent-12]"
+  role="group"
+>
+  <label
+    className="cssClass[label] cssClass[nonempty]"
+    onMouseDown={[Function]}
+  >
+    <input
+      className="cssClass[checkbox]"
+      onFocus={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="cssClass[checkboxIcon]"
+    />
+    <svg
+      className="cssClass[checkmarkIcon]"
+    />
+    <span
+      className="cssClass[content]"
+    >
+      Checkbox
+    </span>
+  </label>
+  <label
+    className="cssClass[label] cssClass[nonempty]"
+    onMouseDown={[Function]}
+  >
+    <input
+      className="cssClass[checkbox]"
+      onFocus={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="cssClass[checkboxIcon]"
+    />
+    <svg
+      className="cssClass[checkmarkIcon]"
+    />
+    <span
+      className="cssClass[content]"
+    >
+      Checkbox
+    </span>
+  </label>
+  <label
+    className="cssClass[label] cssClass[nonempty]"
+    onMouseDown={[Function]}
+  >
+    <input
+      className="cssClass[checkbox]"
+      onFocus={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="cssClass[checkboxIcon]"
+    />
+    <svg
+      className="cssClass[checkmarkIcon]"
+    />
+    <span
+      className="cssClass[content]"
+    >
+      Checkbox
+    </span>
+  </label>
+</div>
+`;

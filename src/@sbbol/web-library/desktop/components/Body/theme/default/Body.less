@@ -1,0 +1,32 @@
+@import '../../../../common/theme/default';
+
+.body {
+    position: relative;
+    padding: @ufs-theme-page-padding-y @ufs-theme-page-padding-x;
+    display: flex;
+    overflow-x: auto;
+
+    .bodyInner {
+        position: relative;
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    &.withWhiteBackground {
+        background: @color-snowy;
+    }
+
+    &.withGrayBackground {
+        background: @color-asphalt-05;
+    }
+
+    &.withDarkGrayBackground {
+        background: @color-asphalt-01;
+    }
+
+    @media (max-width: @screen-md) {
+        .body {
+            padding: @page-padding-sm;
+        }
+    }
+}

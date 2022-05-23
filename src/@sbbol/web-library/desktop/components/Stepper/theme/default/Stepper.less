@@ -1,0 +1,127 @@
+@import 'src/@sbbol/web-library/desktop/common/theme/default.less';
+
+@arrow-border-right-width: 20px;
+
+.stepperWrapper {
+    padding: 16px 32px;
+    background-color: @color-snowy;
+    box-shadow: 0 10px 15px 0 rgba(228, 232, 235, 0.5);
+}
+
+.stepperExtended {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.step {
+    display: inline-flex;
+    position: relative;
+    min-width: @metric-16 + @metric-4 + 21px; // Для корректного отображения ellipsis в Firefox/Safari.
+    line-height: 100%;
+    background-color: @color-snowy;
+    outline: none;
+    border-style: solid;
+    border-color: @color-asphalt-02;
+    cursor: pointer;
+
+    &.onlyIcon {
+        min-width: @metric-16;
+    }
+
+    &.onlyText {
+        min-width: 21px; // Для корректного отображения ellipsis в Firefox/Safari.
+    }
+
+    + .step {
+        margin-left: @metric-12 + @arrow-border-right-width;
+    }
+
+    &:not(:last-child) {
+        padding: 7px 0 7px 11px;
+        border-width: 1px 0 1px 1px;
+        border-radius: 6px 0 0 6px;
+    }
+
+    &:last-child {
+        padding: 7px 11px;
+        border-width: 1px;
+        border-radius: 6px;
+
+        .arrow {
+            display: none;
+        }
+    }
+
+    &:hover {
+        border-color: @color-malachite-02;
+
+        .arrow path:last-child {
+            fill: @color-malachite-02;
+        }
+    }
+
+    &.selected {
+        flex-shrink: 0;
+        background-color: @color-asphalt-05;
+        border-color: @color-malachite-02;
+        cursor: default;
+
+        .arrow path:first-child {
+            fill: @color-asphalt-05;
+        }
+
+        .arrow path:last-child {
+            fill: @color-malachite-02;
+        }
+    }
+
+    &.disabled {
+        border-color: @color-asphalt-03;
+        pointer-events: none;
+        cursor: not-allowed;
+
+        .arrow path:last-child {
+            fill: @color-asphalt-03;
+        }
+    }
+
+    &.focusVisible {
+        border-color: @color-sunny-01;
+
+        .arrow path:last-child {
+            fill: @color-sunny-01;
+        }
+    }
+}
+
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.unselected {
+        color: @color-graphite-02; // Временный фикс цвета.
+    }
+
+    .disabled & {
+        color: @color-asphalt-01; // Временный фикс цвета.
+    }
+}
+
+.icon {
+    flex-shrink: 0;
+    vertical-align: top;
+
+    + .text {
+        margin-left: 4px;
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: -1px;
+    right: -@arrow-border-right-width;
+    transform: translate(0, 0); // Фикс позиции стрелки в Safari.
+}

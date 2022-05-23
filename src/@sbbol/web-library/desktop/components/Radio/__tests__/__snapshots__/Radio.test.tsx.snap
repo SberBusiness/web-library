@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio renders correctly 1`] = `
+<label
+  className="cssClass[label] cssClass[nonempty]"
+  onMouseDown={[Function]}
+>
+  <input
+    className="cssClass[radio]"
+    onFocus={[Function]}
+    type="radio"
+  />
+  <span
+    className="cssClass[radioIcon]"
+  />
+  <span
+    className="cssClass[content]"
+  >
+    Radio
+  </span>
+</label>
+`;
+
+exports[`Radio renders disabled state correctly 1`] = `
+<label
+  className="cssClass[label] cssClass[nonempty]"
+  onMouseDown={[Function]}
+>
+  <input
+    className="cssClass[radio]"
+    disabled={true}
+    onFocus={[Function]}
+    type="radio"
+  />
+  <span
+    className="cssClass[radioIcon]"
+  />
+  <span
+    className="cssClass[content]"
+  >
+    Radio
+  </span>
+</label>
+`;

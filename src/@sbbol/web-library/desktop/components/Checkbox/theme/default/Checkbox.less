@@ -1,0 +1,108 @@
+@import '../../../../common/theme/default';
+
+.label {
+    display: inline-block;
+    position: relative;
+    min-width: @ufs-theme-size-icon-16;
+    min-height: @ufs-theme-size-icon-16;
+    line-height: normal;
+    cursor: pointer;
+    user-select: none;
+
+    &[hidden] {
+        display: none; // Screenshot tests
+    }
+
+    &.nonempty {
+        min-height: 20px;
+    }
+}
+
+.checkbox {
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.checkboxIcon {
+    box-sizing: border-box;
+    background-color: @color-snowy;
+    border: 1px solid @color-asphalt-03;
+    border-radius: @ufs-theme-base;
+}
+
+.checkmarkIcon {
+    transform: scale(0);
+}
+
+.content {
+    display: inline-block;
+    padding-left: @metric-24;
+    box-sizing: border-box;
+    .b1-text-main(@color-graphite-01);
+}
+
+.checkboxIcon,
+.checkmarkIcon {
+    pointer-events: none;
+}
+
+.checkbox,
+.checkboxIcon,
+.checkmarkIcon {
+    position: absolute;
+    width: @ufs-theme-size-icon-16;
+    height: @ufs-theme-size-icon-16;
+    left: 0;
+
+    .nonempty & {
+        top: 2px;
+    }
+}
+
+.checkbox:checked {
+    + .checkboxIcon {
+        background-color: @color-malachite-02;
+        border-color: @color-malachite-02;
+    }
+
+    ~ .checkmarkIcon {
+        transform: scale(1);
+        transition: transform 200ms ease-out;
+    }
+}
+
+.checkbox:hover + .checkboxIcon {
+    border-color: @color-malachite-03;
+}
+
+.checkbox.focusVisible + .checkboxIcon {
+    border-color: @color-sunny-01;
+}
+
+.checkbox:disabled {
+    + .checkboxIcon {
+        background-color: @color-asphalt-05;
+        border-color: @color-asphalt-03;
+    }
+
+    ~ .checkmarkIcon path {
+        fill: @color-asphalt-03;
+    }
+}
+
+.checkbox:checked:enabled:hover + .checkboxIcon {
+    background-color: @color-malachite-03;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .label:hover .checkbox:enabled {
+        & + .checkboxIcon {
+            border-color: @color-malachite-03;
+        }
+
+        &:checked + .checkboxIcon {
+            background-color: @color-malachite-03;
+        }
+    }
+}

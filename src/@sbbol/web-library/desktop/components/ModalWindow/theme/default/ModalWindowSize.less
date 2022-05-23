@@ -1,0 +1,124 @@
+/* stylelint-disable no-descending-specificity */
+
+@import '../../../../common/theme/default';
+
+@close-icon-width: 32px;
+@close-icon-width-sm: 20px;
+@close-icon-padding: @ufs-theme-page-padding-x + @close-icon-width + @ufs-theme-page-padding-x;
+@close-icon-padding-sm: @page-padding-sm + @close-icon-width-sm + @page-padding-sm;
+
+.adaptiveModal() {
+    .modalWindowContentWrapper {
+        left: 0;
+
+        .modalWindowContent {
+            transform: translate(0, 0);
+            width: 100%;
+
+            .globalHeaderTitle {
+                padding-right: @close-icon-padding;
+            }
+        }
+
+        .modalWindowClose {
+            top: @ufs-theme-page-padding-y;
+            right: @ufs-theme-page-padding-x;
+        }
+    }
+
+    .modalWindowCloseWrapper {
+        display: block;
+    }
+
+    & + .modalWindowCloseWrapperFixed {
+        display: none;
+    }
+}
+
+.adaptiveModalClose() {
+    .modalWindowContentWrapper {
+        .modalWindowContent .globalHeaderTitle {
+            padding-right: @close-icon-padding-sm;
+        }
+
+        .modalWindowClose {
+            top: @page-padding-sm + 2px;
+            right: @page-padding-sm;
+
+            svg {
+                width: @close-icon-width-sm;
+                height: @close-icon-width-sm;
+            }
+        }
+    }
+}
+
+// Расчёт отступа слева у крестика закрытия модального окна.
+.modal-close-left(@modal-window-width) {
+    margin-left: @modal-window-width / 2 + @metric-16;
+}
+
+.modalWindowContainer .modalWindow {
+    &.modalWindowSm {
+        .modalWindowClose,
+        & + .modalWindowCloseWrapperFixed .modalWindowClose {
+            .modal-close-left(@ufs-theme-modal-window-sm-width);
+        }
+
+        .modalWindowContent {
+            width: @ufs-theme-modal-window-sm-width;
+
+            .modalWindowBody {
+                min-height: @ufs-theme-modal-window-sm-body-height;
+            }
+        }
+
+        @media (max-width: @screen-sm) {
+            .adaptiveModal();
+            .adaptiveModalClose();
+        }
+    }
+
+    &.modalWindowMd {
+        .modalWindowClose,
+        & + .modalWindowCloseWrapperFixed .modalWindowClose {
+            .modal-close-left(@ufs-theme-modal-window-md-width);
+        }
+
+        .modalWindowContent {
+            width: @ufs-theme-modal-window-md-width;
+
+            .modalWindowBody {
+                min-height: @ufs-theme-modal-window-md-body-height;
+            }
+        }
+
+        @media (max-width: @screen-md) {
+            .adaptiveModal();
+            .adaptiveModalClose();
+        }
+    }
+
+    &.modalWindowLg {
+        .modalWindowClose,
+        & + .modalWindowCloseWrapperFixed .modalWindowClose {
+            .modal-close-left(@ufs-theme-modal-window-lg-width);
+        }
+
+        .modalWindowContent {
+            width: @ufs-theme-modal-window-lg-width;
+
+            .modalWindowBody {
+                min-height: @ufs-theme-modal-window-lg-body-height;
+            }
+        }
+
+        @media (max-width: @screen-lg) {
+            .adaptiveModal();
+        }
+
+        @media (max-width: @screen-md) {
+            .adaptiveModalClose();
+        }
+    }
+}

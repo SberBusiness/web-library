@@ -1,0 +1,32 @@
+@import 'src/@sbbol/web-library/desktop/common/theme/default';
+
+.globalHeaderTabs {
+    display: flex;
+    justify-content: space-between;
+
+    .headerTabsContent {
+        flex-grow: 1;
+        min-width: 1px; // IE fix.
+    }
+
+    .headerTabsControls {
+        flex-shrink: 0;
+        white-space: nowrap;
+        padding-left: @ufs-theme-padding-before-controls-column;
+    }
+
+    // На мобильных устройствах блок с кнопками располагается строкой ниже.
+    @media (max-width: @screen-md) {
+        flex-wrap: wrap;
+
+        .headerTabsContent {
+            width: 100%;
+        }
+
+        .headerTabsControls {
+            padding-top: @page-elements-padding-y-sm;
+            padding-left: 0;
+            white-space: normal;
+        }
+    }
+}

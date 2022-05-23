@@ -1,0 +1,19 @@
+@import '../../../../common/theme/default';
+
+.input {
+    .input-base();
+
+    width: 100%;
+
+    &:focus {
+        caret-color: @color-graphite-01; //Фикс цвета каретки в Chrome и Mozilla
+    }
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &.empty {
+        color: @color-asphalt-01;
+    }
+}
